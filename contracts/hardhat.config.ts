@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-ethers";
 
-// Load the root .env file (using a relative path)
+// Load .env from the repository root (relative path)
 dotenv.config({ path: "../.env" });
 
 const config: HardhatUserConfig = {

@@ -77,7 +77,7 @@ export const Header = () => {
       });
     } catch (error: any) {
       console.error("Connect wallet error:", error);
-
+      
       // User rejected the request
       if (error.code === 4001) {
         toast({

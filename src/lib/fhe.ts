@@ -18,7 +18,7 @@ export async function initializeFHE(): Promise<FheInstance> {
       console.log("Initializing FHE SDK...");
       await initSDK();
       console.log("SDK initialized, creating instance with SepoliaConfig...");
-
+      
       // Use the SDK-provided Sepolia configuration preset
       const instance = await createInstance(SepoliaConfig);
       console.log("FHE instance created successfully");

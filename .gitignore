@@ -23,8 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
-
-# Hardhat build outputs
-contracts/artifacts
-contracts/cache
-contracts/node_modules

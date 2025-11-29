@@ -130,7 +130,7 @@ const PostDetail = () => {
         }
       } finally {
         if (!cancelled) {
-          setLoading(false);
+    setLoading(false);
         }
       }
     };
@@ -436,8 +436,8 @@ const PostDetail = () => {
               size="sm"
               onClick={() => window.open(`https://ipfs.io/ipfs/${post.ipfsHash}`, "_blank")}
             >
-              View on IPFS
-            </Button>
+                    View on IPFS
+                  </Button>
                 </div>
               </Card>
             )}

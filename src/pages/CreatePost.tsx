@@ -56,7 +56,7 @@ const CreatePost = () => {
 
       console.log("Contract address:", CONTRACT_ADDRESS);
       console.log("Calling createPost with postId:", postId.toString());
-
+      
       toast({
         title: "Submitting...",
         description: "Sending the post to the blockchain.",
@@ -87,7 +87,7 @@ const CreatePost = () => {
           isEncrypted,
           createdAt: Date.now(),
         });
-
+        
         toast({
           title: "Post Created! 🎉",
           description: `Post ID: ${postId.toString().slice(0, 10)}...`,
@@ -98,7 +98,7 @@ const CreatePost = () => {
         }, 1500);
       } catch (gasError: any) {
         console.error("Gas estimation failed, trying direct send:", gasError);
-
+        
         try {
           console.log("Sending transaction without gas estimate...");
           const tx = await contract.createPost(postId, {
@@ -125,7 +125,7 @@ const CreatePost = () => {
             isEncrypted,
             createdAt: Date.now(),
           });
-
+          
           toast({
             title: "Post Created! 🎉",
             description: `Post ID: ${postId.toString().slice(0, 10)}...`,
