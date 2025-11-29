@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 180 100% 98%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 180 100% 98%;
+
+    --popover: 220 22% 10%;
+    --popover-foreground: 180 100% 98%;
+
+    --primary: 180 85% 55%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 270 60% 65%;
+    --secondary-foreground: 220 25% 8%;
+
+    --muted: 220 18% 20%;
+    --muted-foreground: 180 20% 70%;
+
+    --accent: 180 85% 55%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 180 100% 98%;
+
+    --border: 220 18% 22%;
+    --input: 220 18% 18%;
+    --ring: 180 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Web3/Crypto specific tokens */
+    --glow: 180 85% 55%;
+    --glow-secondary: 270 60% 65%;
+    --glass-bg: 220 20% 15%;
+    --glass-border: 180 40% 40%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 85% 55% / 0.2), hsl(270 60% 65% / 0.2));
+    --gradient-glow: linear-gradient(135deg, hsl(180 85% 55%), hsl(270 60% 65%));
+
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 20px hsl(180 85% 55% / 0.3);
+    --shadow-glow-strong: 0 0 40px hsl(180 85% 55% / 0.5);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    font-weight: 600;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    background: hsl(var(--glass-bg) / 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border) / 0.2);
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-strong {
+    box-shadow: var(--shadow-glow-strong);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
